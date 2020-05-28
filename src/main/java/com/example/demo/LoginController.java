@@ -24,13 +24,13 @@ public class LoginController {
 
     @PostMapping(path = "/login")
     public void login(@RequestBody LoginModel loginModel, HttpServletRequest request, HttpServletResponse response) throws SQLException {
-        log.info("UsersController:  list users");
-        loginService.login(loginModel,request,response);
+
+         loginService.login(loginModel,request,response);
     }
 
     @PostMapping(path = "/logout")
     public void logout(@RequestBody LoginModel loginModel,HttpServletRequest request,HttpServletResponse response) throws SQLException {
-        log.info("UsersController:  list users");
+
         loginService.logout(loginModel,request,response);
     }
 

@@ -18,11 +18,10 @@ public class LoginService {
        session.setAttribute("LogedIn",loginModel.getUsername());
         Connection con =  JDBCConector.connectToDB();
         PreparedStatement statement = con.prepareStatement(Insert.loginQuery());
-        statement.setInt(1,1);
-        statement.setString(2,loginModel.getUsername());
-        statement.setString(3,loginModel.getPassword());
-        statement.setInt(4,1);
+        statement.setString(1,loginModel.getUsername());
+        statement.setString(2,loginModel.getPassword());
         statement.executeQuery();
+
 
     }
 
@@ -30,10 +29,8 @@ public class LoginService {
         request.getAttribute("LogedIn");
         Connection con =  JDBCConector.connectToDB();
         PreparedStatement statement = con.prepareStatement(Insert.logoutQuery());
-        statement.setInt(1,1);
-        statement.setString(2,loginModel.getUsername());
-        statement.setString(3,loginModel.getPassword());
-        statement.setInt(4,0);
+        statement.setString(1,loginModel.getUsername());
+        statement.setString(2,loginModel.getPassword());
         statement.execute();
     }
 
